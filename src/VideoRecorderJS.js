@@ -149,6 +149,7 @@ var VideoRecorderJS = (function () {
 
                         mediaRecorder.onstop = function (e) {
                             recordedBlob = new Blob(chunks, {'type': 'video/webm'});
+                            videoBlobData = recordedBlob;
                             callbackFunc([
                                 {type: "video", blob: recordedBlob, mimeType: "video/webm", extension: "webm"}
                             ]);
